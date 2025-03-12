@@ -1,10 +1,38 @@
 .footer {
-  background-color: #282c34;
+  background: linear-gradient(135deg, rgba(40, 44, 52, 0.9), rgba(30, 30, 30, 0.9));
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
   color: white;
   text-align: center;
   padding: 1rem;
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
-  box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px -4px 12px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
 }
+
+.footer:hover {
+  background: linear-gradient(135deg, rgba(50, 54, 64, 1), rgba(40, 40, 40, 1));
+  box-shadow: 0px -6px 16px rgba(100, 108, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.footer a {
+  color: #646cff;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer a:hover {
+  color: #747bff;
+  text-shadow: 0px 0px 8px rgba(100, 108, 255, 0.6);
+}
+
