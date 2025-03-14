@@ -34,7 +34,7 @@ import routes from './routes/index.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-
+const forceDatabaseRefresh = false;
 // Serves static files in the entire client's dist folder
 app.use(express.static('../client/dist'));
 
@@ -185,4 +185,4 @@ app.get ('/', (req, res) => {
 );
 
 console.log('Listening on 5000');
-app.listen(5000);
+//app.listen(5000);
