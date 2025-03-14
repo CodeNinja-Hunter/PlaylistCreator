@@ -22,13 +22,30 @@ app.listen(port, () => {
 });*/ 
 
 import dotenv from 'dotenv';
+dotenv.config();
 import express from 'express'; // Express web server framework
 import cors from  'cors';
 import querystring from 'querystring';
 import cookieParser from 'cookie-parser'; 
 import path from 'path';
 import {fileURLToPath} from 'url'; 
+import sequelize from './config/connection.js';
+import routes from './routes/index.js';
 
+const app = express();
+const PORT = process.env.PORT || 3001;
+
+// Serves static files in the entire client's dist folder
+app.use(express.static('../client/dist'));
+
+app.use(express.json());
+app.use(routes);
+
+sequelize.sync({force: forceDatabaseRefresh}).then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`);
+  });
+});
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -55,8 +72,6 @@ var generateRandomString = function(length) {
 };
 
 var stateKey = 'spotify_auth_state';
-
-var app = express();
 
 app.use(express.static(__dirname + '/public'))
    .use(cors())
