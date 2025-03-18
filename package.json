@@ -14,7 +14,7 @@
     "build": "cd server && npm run build",
     "seed": "cd server && npm run seed",
     "render-build": "npm install && npm run build",
-    "install": " npm install && cd server && npm i && cd ../client && npm i"
+    "install": " cd server && npm i && cd ../client && npm i"
   },
   "keywords": [],
   "author": "",
