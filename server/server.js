@@ -16,10 +16,7 @@ app.use('/playlist', playlistRoutes);
 app.get('/', (req, res) => {
     res.send('Server is running');
 });
-
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});*/ 
+*/ 
 
 import dotenv from 'dotenv';
 dotenv.config();
@@ -33,7 +30,7 @@ import sequelize from './config/connection.js';
 import routes from './routes/index.js';
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3001;
 const forceDatabaseRefresh = false;
 // Serves static files in the entire client's dist folder
 app.use(express.static('../client/dist'));
@@ -183,6 +180,10 @@ app.get ('/', (req, res) => {
   res.send('Hello World');
 }
 );
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
 
 console.log(`Listening on ${PORT}`);
 //app.listen(5000);
