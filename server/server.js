@@ -30,7 +30,7 @@ import sequelize from './config/connection.js';
 import routes from './routes/index.js';
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 10000;
 const forceDatabaseRefresh = false;
 // Serves static files in the entire client's dist folder
 app.use(express.static('../client/dist'));
