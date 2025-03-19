@@ -3,6 +3,8 @@ import { User } from '../models/user.js'; // Import the User model
 import jwt from 'jsonwebtoken'; // Import JSON Web Token library
 import bcrypt from 'bcrypt'; // Import bcrypt for password hashing
 
+console.log("Using updated auth-routes.js v1");
+
 // Login function to authenticate a user
 export const login = async (req, res) => {
   const { username, password } = req.body; // Extract username and password from request body
