@@ -176,13 +176,20 @@ app.get('/refresh_token', function(req, res) {
     }
   });
 }); 
-app.get ('/', (req, res) => {
-  res.send('Hello World');
-}
-);
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+// Sync Sequelize models and then start the server
+sequelize.sync({ force: false }).then(async () => {
+  console.log('Database synced.');
+
+  // Seed the database
+  console.log('Seeding database...');
+  await seedAll();
+
+  app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+  });
+}).catch((err) => {
+  console.error('Unable to connect to the database:', err);
 });
 
 console.log(`Listening on ${PORT}`);
