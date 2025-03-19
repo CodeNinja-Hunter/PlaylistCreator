@@ -1,23 +1,22 @@
 import { User } from '../models/index.js';
-import bcrypt from 'bcrypt'; // Import bcrypt for password hashing
+import bcrypt from 'bcrypt';
 
 export const seedUsers = async () => {
   await User.bulkCreate([
     { 
       username: 'JollyGuru', 
       email: 'jolly@guru.com', 
-      password: await bcrypt.hash('password', 10) // Hash the password
+      password: await bcrypt.hash('password', 10)
     },
     { 
       username: 'SunnyScribe', 
       email: 'sunny@scribe.com', 
-      password: await bcrypt.hash('password', 10) // Hash the password
+      password: await bcrypt.hash('password', 10)
     },
     { 
       username: 'RadiantComet', 
       email: 'radiant@comet.com', 
-      password: await bcrypt.hash('password', 10) // Hash the password
+      password: await bcrypt.hash('password', 10)
     },
-  ], { individualHooks: true }); // Keep hooks for any model-level hashing (if applicable)
+  ], { individualHooks: true }); // Keep hooks if your User model needs them
 };
-
