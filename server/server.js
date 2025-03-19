@@ -29,7 +29,7 @@ import {fileURLToPath} from 'url';
 import sequelize from './config/connection.js';
 import routes from './routes/index.js';
 import authRoutes from './routes/auth-routes.js';
-import seedAll from './seeds/index.js';
+import seedAll from './seeds/user-seeds.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
