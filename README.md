@@ -1,4 +1,4 @@
-# PlaylistCreator  
+# Playlist Creator 
 
 Playlist Creator is a web application that allows users to create and manage playlists using the Spotify API. Users can log in with their Spotify account, create new playlists, and add tracks to their playlists.
 
@@ -39,7 +39,7 @@ Create a `.env` file in the `server` directory with the following content:
 ```properties
 SPOTIFY_CLIENT_ID=your_spotify_client_id
 SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
-SPOTIFY_REDIRECT_URI=http://localhost:5000/callback
+SPOTIFY_REDIRECT_URI=http://localhost:3001/callback
 ```
 
 ### Install Dependencies
@@ -76,7 +76,7 @@ npm run dev
 
 ### Accessing the Application
 
-Open your web browser and navigate to `http://localhost:5000` to access the React application. The server should be running on `http://localhost:5000`.
+Open your web browser and navigate to `http://localhost:3000` to access the React application. The server should be running on `http://localhost:3001`.
 
 ## API Endpoints
 
